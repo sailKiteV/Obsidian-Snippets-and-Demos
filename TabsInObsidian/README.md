@@ -2,7 +2,7 @@
 ---
 ⚠ Live Preview users,  please see [below](#live-preview)! ⚠
 
-This is an implementation for a tab-based rendering scheme in Obsidian.md, leaning heavily on capabilities offered by the native callouts feature of the app. The snippet is available in this gist or at [this link](https://gist.github.com/sailKiteV/e1124244161e2ab5ac3045562beee4ae#file-tabsinobsidian-css). We use mostly CSS and a very minor amount of inline HTML to get everything working properly. To get started, you'll want to be familiar with the [basic syntax of callouts](https://help.obsidian.md/How+to/Use+callouts).  
+This is an implementation for a tab-based rendering scheme in Obsidian.md, leaning heavily on capabilities offered by the native callouts feature of the app. The snippet is available in this repository or at [this link](TabsInObsidian.css). We use mostly CSS and a very minor amount of inline HTML to get everything working properly. To get started, you'll want to be familiar with the [basic syntax of callouts](https://help.obsidian.md/How+to/Use+callouts).  
 
 ## The Callouts
 We will be using two types of callout to help us with structure, and a third type to hold our desired content:
@@ -39,7 +39,7 @@ Without getting too deep into the HTML explanation of what all this means, there
 - `for="first1"` is a property that connects our styled label to the underlying radio button input. Notice that our `for` value here is the same as our example `id` above. These must be the same in order to bind the label to the input.
 - `The First Label Title!` is the actual text content that will render inside the tab label, and can be whatever you want.
 
-And that's really all that we need on the HTML side. If you want a full demo to read through, check out [example.md](https://gist.github.com/sailKiteV/e1124244161e2ab5ac3045562beee4ae#file-example-md).
+And that's really all that we need on the HTML side. If you want a full demo to read through, check out [example.md](example.md).
 
 ---
 ## Live Preview
