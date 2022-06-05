@@ -1,0 +1,90 @@
+/* --- a callout style for creating scrolling headers --- */
+/* --- intended for use with readable line length on! --- */
+/* @settings
+
+name: Scroll Header Callout
+id: scroll-header-callout
+settings:
+    -
+        id: options
+        title: Options
+        description: This snippet is intended for use with Readable Line Length enabled.
+        type: heading
+        level: 1
+    -
+        id: scroll-header-width
+        title: Header Width
+        type: variable-number
+        format: px
+        description: Width in pixels of the scroll header. The text will wrap if it would overflow this width.
+        default: 100
+    -
+        id: scroll-header-callout-in-lp
+        title: Enable in Live Preview
+        type: class-toggle
+        description: Enables scroll headers in Live Preview. This *will* change the behavior of affected callout code blocks, so be mindful that unexpected behavior may result.
+        default: false
+
+*/
+/* custom properties for Style Settings */
+body {
+    --scroll-header-width: 100px;
+}
+/* initialize and de-style callout */
+.callout[data-callout="scroll-header"] {
+    background: unset;
+    border: unset;
+    margin: unset;
+    padding: unset;
+    position: relative;
+    display: block;
+    overflow: visible;
+}
+.callout[data-callout="scroll-header"] > .callout-title {
+    display: none;
+}
+/* set up the content container */
+.callout[data-callout="scroll-header"] > .callout-content {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    overflow: visible;
+}
+/* commit warcrimes */
+.callout[data-callout="scroll-header"] > .callout-content > :is(h1,h2,h3,h4,h5,h6):first-child {
+    position: sticky;
+    display: block;
+    float: left;
+    top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: var(--scroll-header-width);
+    margin-right: 0px;
+    margin-left: calc( -1 * var(--scroll-header-width));
+    padding-right: 5px;
+    line-height: 100%;
+}
+/* for Live Preview, this WILL change callout behavior */
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block {
+    overflow: visible;
+    display: contents !important;
+}
+/* header colors in Live Preview */
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h1 {
+    color: var(--text-title-h1);
+}
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h2 {
+    color: var(--text-title-h2);
+}
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h3 {
+    color: var(--text-title-h3);
+}
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h4 {
+    color: var(--text-title-h4);
+}
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h5 {
+    color: var(--text-title-h5);
+}
+.scroll-header-callout-in-lp .cm-callout.cm-embed-block .callout-content > h6 {
+    color: var(--text-title-h6);
+}

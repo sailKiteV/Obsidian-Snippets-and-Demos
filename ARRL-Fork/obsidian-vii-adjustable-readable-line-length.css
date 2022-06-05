@@ -1,0 +1,52 @@
+/* Changes the readable line length in Obsidian Notes. Tested in Obsidian v0.14.6
+See also: https://forum.obsidian.md/t/adjustable-readable-line-length/7564/6
+Note: For this the "readable line length" property in settings has to be enabled
+(as expected). 700px width is the application's default, adjust all numbers below. 
+Pixel (or percentage) as a unit enables a width independent from the number of characters 
+(good when adjusting zoom level / font size). For fixed amount of characters use  rem
+Original snippet by https://gist.github.com/vii33 , modified by sailKite to use
+custom properties and enable Style Settings support*/
+
+/* @settings
+
+name: Adjust Readable Line Length
+id: adj-read-line
+settings:
+    -
+        id: read-line-length
+        title: Length
+        type: variable-number
+        description: Length in pixels.
+        default: 700
+        format: px
+
+*/
+
+body {
+    --read-line-length: 700px;
+}
+
+/* Width in preview / read mode */
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer, 
+.markdown-source-view.is-readable-line-width .cm-content {
+    max-width: var(--read-line-length);
+}
+
+/* Widths in editor mode */
+.markdown-source-view.mod-cm6.is-readable-line-width.is-rtl .cm-contentContainer {
+    max-width: var(--read-line-length);
+    margin-left: auto;
+    }
+
+.markdown-source-view.mod-cm6.is-readable-line-width:not(.is-rtl) .cm-contentContainer {
+    max-width: var(--read-line-length); 
+    margin-right: auto;
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-line:not(.HyperMD-table-row) {
+    max-width: var(--read-line-length);
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-content {
+    max-width: var(--read-line-length);
+}
