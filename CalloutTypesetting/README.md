@@ -46,6 +46,7 @@ The snippet includes an implementation of a few adjustable values using the [Sty
 
 ---
 ## Demos
+Click any of the header links to see the associated written Markdown.
 ### |[rtl](Examples/rtl.md)
 ![rtl](Demos/CallType_rtl.png)
 
