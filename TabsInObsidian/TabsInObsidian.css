@@ -85,7 +85,7 @@ div[data-callout="tab-content"] > .callout-content > table:nth-child(1) {
 }
 
 /* ultra ugly list of label-to-active-tab relations */
-[type=radio]:not(:is([id$="1"], [id$="2"], [id$="3"], [id$="4"], [id$="5"], [id$="6"]):is(:checked, [checked])) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(1),
+input[type=radio]:last-of-type:not( input[type=radio]:checked ~ input[type=radio], :checked, [checked] ) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(1),
 div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="1"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(1) {
   z-index: 2;
   display: block;
