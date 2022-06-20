@@ -115,12 +115,14 @@ div.is-collapsed[data-callout-metadata*="vertical-lr"] {
 }
 
 /* left-align vertical callout */
-div[data-callout-metadata*="l-align"] {
+div[data-callout-metadata*="l-align"],
+.markdown-source-view.mod-cm6 div[data-callout-metadata*="l-align"] {
     margin-right: auto;
 }
 
 /* right-align vertical callout */
-div[data-callout-metadata*="r-align"] {
+div[data-callout-metadata*="r-align"],
+.markdown-source-view.mod-cm6 div[data-callout-metadata*="r-align"] {
     margin-left: auto;
 }
 
