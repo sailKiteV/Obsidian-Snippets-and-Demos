@@ -1,0 +1,81 @@
+/* --- Change Selected Text Color --- */
+/* Based on snippet courtesy of Murf#2728 from OMG Discord */
+/* @settings
+
+name: Text Selection Colors
+id: text-selection-colors
+settings:
+    -
+        id: text-selection-colors-info
+        title: General Settings
+        type: heading
+        level: 1
+        description: General settings for use across all modes. Future versions of this snippet may have more granular control for different Editor and View modes.
+    -
+        id: text-selection-colors-content
+        title: Content Color (Text)
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: text-selection-colors-content-hsl
+                format: hsl
+        default: 'rgba(153,153,153,1)'
+        description: Color of the selected text itself.
+    -
+        id: text-selection-colors-background
+        title: Background Color
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: text-selection-colors-background-hsl
+                format: hsl
+        default: 'rgba(23,48,77,0.99)'
+        description: Color of the background for selected text.
+    -
+        id: text-selection-colors-cursor
+        title: Cursor Color
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: text-selection-colors-cursor-hsl
+                format: hsl
+        default: 'rgba(255,255,255,1)'
+        description: Color of the blinking cursor in Editing View.
+    -
+        id: text-selection-colors-cursor-width
+        title: Cursor Width
+        type: variable-number
+        default: 1
+        format: px
+        description: Width in pixels of the cursor.
+*/
+body {
+    --text-selection-colors-content: rgba(153,153,153,1);
+    --text-selection-colors-background: rgba(23,48,77,0.99);
+    --text-selection-colors-cursor: rgba(255,255,255,1);
+    --text-selection-colors-cursor-width: 1px;
+}
+
+/* Cursor color */
+.markdown-source-view.mod-cm6 div.cm-editor .cm-cursor {
+    border-left-color: var(--text-selection-colors-cursor);
+    border-width: var(--text-selection-colors-cursor-width);
+}
+.markdown-source-view.mod-cm6 div.cm-editor div {
+    caret-color: var(--text-selection-colors-cursor);
+}
+
+/* Text selection background */
+.markdown-source-view.mod-cm6 div.cm-editor ::selection {
+    color: var(--text-selection-colors-content);
+    background-color: var(--text-selection-colors-background);
+}
+.markdown-source-view.mod-cm6 .cm-editor .cm-selectionBackground {
+    background: transparent;
+}
