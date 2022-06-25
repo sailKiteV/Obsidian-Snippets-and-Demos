@@ -11,6 +11,6 @@ A collection of snippets and things that don't quite need their own directory. E
 2. Place or make sure that the snippet is in your vault's snippets folder (which can be accessed from Obsidian's Appearance settings).  
     a. Refresh your snippets if it does not appear.
 3. Enable the snippet (also in Appearance settings).
-4. Change colors as desired.  
-    a. If using Style Settings: Go to the "Plugin options" entry for Style Settings, and there should be a new section for "Link Colors". Modify colors here as desired.  
-    b. Else: Change the assigned values for the custom properties in the CSS snippet to be whatever you like.
+4. Change properties as desired.  
+    a. If using Style Settings: Go to the "Plugin options" entry for Style Settings, and there should be a new section for the associated snippet. Modify settings as desired.  
+    b. Else: Change the assigned values for properties in the CSS snippet to be whatever you like.
