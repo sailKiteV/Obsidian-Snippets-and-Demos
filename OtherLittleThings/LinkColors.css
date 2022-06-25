@@ -1,0 +1,74 @@
+/* --- Link Colors --- */
+/* @settings
+
+id: link-colors
+name: Link Colors
+settings:
+    -
+        id: link-colors-internal
+        title: Internal Links
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: link-colors-internal-hsl
+                format: hsl
+        default: 'rgba(127, 109, 242, 1.0)'
+        description: Color of internal link text.
+    -
+        id: link-colors-unresolved
+        title: Unresolved Links
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: link-colors-unresolved-hsl
+                format: hsl
+        default: 'rgba(127, 109, 242, 0.5)'
+        description: Color of unresolved link text.
+    -
+        id: link-colors-external
+        title: External Links
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: link-colors-external-hsl
+                format: hsl
+        default: 'rgba(127, 109, 242, 1.0)'
+        description: Color of external link text.
+*/
+body {
+    --link-colors-internal: rgba(127, 109, 242, 1.0);
+    --link-colors-unresolved: rgba(127, 109, 242, 0.5);
+    --link-colors-external: rgba(127, 109, 242, 1.0);
+}
+/* internal links */
+a.internal-link,
+.cm-hmd-internal-link {
+    color: var(--link-colors-internal) !important;
+}
+
+/* unresolved links */
+.markdown-rendered a.internal-link.is-unresolved,
+.is-unresolved .cm-hmd-internal-link {
+    color: var(--link-colors-unresolved) !important;
+    opacity: 1;
+}
+.markdown-source-view.mod-cm6 .is-unresolved {
+    opacity: 1;
+}
+
+/* external links */
+a.external-link,
+.cm-line > .cm-link:not(.cm-hmd-barelink, .cm-hmd-barelink + *) {
+    color: var(--link-colors-external) !important;
+}
+
+/* hover */
+a:hover, .internal-link:is(*,.is-unresolved):hover {
+    color: var(--text-a-hover) !important;
+}
