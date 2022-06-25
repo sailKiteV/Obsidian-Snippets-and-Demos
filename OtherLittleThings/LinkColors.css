@@ -40,11 +40,37 @@ settings:
                 format: hsl
         default: 'rgba(127, 109, 242, 1.0)'
         description: Color of external link text.
+    -
+        id: link-colors-raw
+        title: Raw Links
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: link-colors-raw-hsl
+                format: hsl
+        default: 'rgba(153, 153, 153, 1.0)'
+        description: Color of raw link text. (Raw links are links that do not have markdown syntax, such as "https://www.google.com" with no brackets.
+    -
+        id: link-colors-header
+        title: Header and Block Links
+        type: variable-color
+        opacity: true
+        format: rgb
+        alt-format:
+            -
+                id: link-colors-header-hsl
+                format: hsl
+        default: 'rgba(127, 109, 242, 1.0)'
+        description: Color of header-reference link text and block-reference link text.
 */
 body {
     --link-colors-internal: rgba(127, 109, 242, 1.0);
     --link-colors-unresolved: rgba(127, 109, 242, 0.5);
     --link-colors-external: rgba(127, 109, 242, 1.0);
+    --link-colors-raw: rgba(153, 153, 153, 1.0);
+    --link-colors-header: rgba(127, 109, 242, 1.0);
 }
 /* internal links */
 a.internal-link,
@@ -66,6 +92,17 @@ a.internal-link,
 a.external-link,
 .cm-line > .cm-link:not(.cm-hmd-barelink, .cm-hmd-barelink + *) {
     color: var(--link-colors-external) !important;
+}
+
+/* raw links (links with no markdown syntax) */
+.cm-url > .cm-underline,
+a.external-link:not([aria-label]) {
+    color: var(--link-colors-raw) !important;
+}
+
+/* header and block links */
+a.internal-link[data-href^="#"] {
+    color: var(--link-colors-header) !important;
 }
 
 /* hover */
