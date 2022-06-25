@@ -7,3 +7,4 @@
 - *[Scroll Headers](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/ScrollHeaders)*: render the header of a section of your notes as a floating element that scrolls with you.
 - *[Adjustable Readable Line Length (ARRL-Fork)](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/ARRL-Fork)*: change the width of the content area when Readable Line Length is enabled in the Editor. Credit to [vii33](https://github.com/vii33) for the initial snippet.
 - *[Callout Typesetting](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/CalloutTypesetting)*: format your callouts in various ways, including support for various directional layouts used by non-English languages.
+- *[Other Little Things](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/OtherLittleThings)*: a catch-all for snippets and things that don't quite need their own directory.
