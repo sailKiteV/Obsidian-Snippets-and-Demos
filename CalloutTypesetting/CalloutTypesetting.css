@@ -150,6 +150,10 @@ div[data-callout="hidden"] {
     clear: both;
     overflow: hidden;
 }
+/* hide only title text */
+div[data-callout-metadata~="empty-title"] > .callout-title > .callout-title-inner  {
+    font-size: 0px;
+}
 /* hide title for container-like callout */
 div[data-callout-metadata~="no-title"] > .callout-title,
 div[data-callout="hidden"] > .callout-title {
