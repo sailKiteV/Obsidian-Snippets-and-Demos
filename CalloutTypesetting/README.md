@@ -28,7 +28,8 @@ Modifiers:
 	- **upright**: Displays *all* glyphs in an upright orientation.
 	- **sideways**: Displays *all* gyphs in a sideways orientation.
 - Title
-	- **no-title**: Hides the title portion of any callout.
+	- **empty-title**: Hides only the title text of any callout.
+	- **no-title**: Hides the entire title portion of any callout.
 - Display
 	- **l-align**: Aligns the entire callout to the left.
 	- **r-align**: Aligns the entire callout to the right.
