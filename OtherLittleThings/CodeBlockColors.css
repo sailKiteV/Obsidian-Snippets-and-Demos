@@ -1,0 +1,66 @@
+/* --- Code Block Colors --- */
+/* @settings
+
+name: Code Block Colors
+id: code-block-colors
+settings:
+    - 
+        id: code-block-colors-fenced-text-toggle
+        title: Fenced Block Text Editing View Toggle
+        description: Force text in fenced code blocks to use the assigned text color while in Editing View.
+        type: class-toggle
+    - 
+        id: code-block-colors-text
+        title: Text Color
+        description: Color of text in code blocks and inline code.
+        type: variable-color
+        format: rgb
+        opacity: true
+        default: rgba(255, 165, 0, 1)
+    - 
+        id: code-block-colors-background
+        title: Background Color
+        description: Color of background in code blocks and inline code.
+        type: variable-color
+        format: rgb
+        opacity: true
+        default: rgba(0, 0, 0, 0)
+    - 
+        id: code-block-colors-fenced-border
+        title: Border Color
+        description: Color of border in fenced code blocks.
+        type: variable-color
+        format: rgb
+        opacity: true
+        default: rgba(0, 0, 0, 0)
+*/
+body {
+    --code-block-colors-text: rgba(255, 165, 0, 1);
+    --code-block-colors-background: rgba(0, 0, 0, 0);
+    --code-block-colors-fenced-border: rgba(0, 0, 0, 0);
+}
+/* text */
+.markdown-rendered code,
+.cm-s-obsidian span:is(.cm-inline-code, .cm-formatting-code-block),
+.code-block-colors-fenced-text-toggle .markdown-source-view.mod-cm6 .HyperMD-codeblock {
+    color: var(--code-block-colors-text);
+    background-color: transparent;
+}
+/* fenced block and inline background */
+.markdown-rendered :is(pre, code),
+.cm-s-obsidian div.HyperMD-codeblock,
+.cm-s-obsidian span:is(.cm-inline-code, .cm-formatting-code-block),
+.cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
+    background-color: var(--code-block-colors-background);
+}
+/* code block borders */
+.cm-s-obsidian div.HyperMD-codeblock-begin {
+    border-top: 1px solid var(--code-block-colors-fenced-border);
+}
+.cm-s-obsidian div.HyperMD-codeblock-end {
+    border-bottom: 1px solid var(--code-block-colors-fenced-border);
+}
+.cm-s-obsidian div.HyperMD-codeblock {
+    border-left: 1px solid var(--code-block-colors-fenced-border);
+    border-right: 1px solid var(--code-block-colors-fenced-border);
+}
