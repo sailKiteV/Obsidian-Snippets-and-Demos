@@ -1,0 +1,4 @@
+# Theme Things
+A small resource for things related to developing [themes](https://help.obsidian.md/How+to/Add+custom+styles#Themes) in [Obsidian](https://obsidian.md).  
+Contents  
+- *[Default Color Properties]()*: a list of top-level [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) declared by the default theme in Obsidian. Includes an implementation for the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin by mgmeyers, which will allow you to change any of the properties to whatever colors you like, thus letting you deepen your understanding of how the default theme is structured, and how you can expect quick drafts of themes that use these properties to look. Be aware that this may interfere with any active theme, and is not intended for non-developmental use cases. Future updates may include descriptions of what the different properties are used for in the default theme. Current as of Obsidian v0.14.15.

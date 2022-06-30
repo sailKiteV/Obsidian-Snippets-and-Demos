@@ -1,0 +1,351 @@
+/* --- a bunch of custom properties defined by Obsidian's default theme --- */
+/* dark mode gang */
+/* @settings
+
+name: Default Color Properties
+id: obsidian-default-color-properties
+settings:
+    -
+        id: obsidian-color-properties
+        title: Color Properties
+        description: List of natively-defined color properties in Obsidian.
+        type: heading
+        level: 1
+    -
+        id: obsidian-color-properties-backgrounds
+        title: Background Properties
+        type: heading
+        level: 2
+    -
+        id: background-primary
+        title: Background Primary
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(32, 32, 32)
+    -
+        id: background-primary-alt
+        title: Background Primary Alt
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(26, 26, 26)
+    -
+        id: background-secondary
+        title: Background Secondary
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(22, 22, 22)
+    -
+        id: background-secondary-alt
+        title: Background Secondary Alt
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(0, 0, 0)
+    -
+        id: background-modifier-border
+        title: Background Modifier Border
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(51, 51, 51)
+    -
+        id: background-modifier-form-field
+        title: Background Modifier Form Field
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(0, 0, 0, 0.3)
+    -
+        id: background-modifier-form-field-highlighted
+        title: Background Modifier Form Field Highlighted
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(0, 0, 0, 0.22)
+    -
+        id: background-modifier-box-shadow
+        title: Background Modifier Box Shadow
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(0, 0, 0, 0.3)
+    -
+        id: background-modifier-success
+        title: Background Modifier Success
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(25, 115, 0)
+    -
+        id: background-modifier-success-rgb
+        title: Background Modifier Success RGB
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(25, 115, 0)
+    -
+        id: background-modifier-error
+        title: Background Modifier Error
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(61, 0, 0)
+    -
+        id: background-modifier-error-rgb
+        title: Background Modifier Error RGB
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(61, 0, 0)
+    -
+        id: background-modifier-error-hover
+        title: Background Modifier Error Hover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(71, 0, 0)
+    -
+        id: background-modifier-cover
+        title: Background Modifier Cover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(0, 0, 0, 0.8)
+    -
+        id: obsidian-color-properties-texts
+        title: Text Properties
+        type: heading
+        level: 2
+    -
+        id: text-accent
+        title: Text Accent
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(127, 109, 242)
+    -
+        id: text-accent-hover
+        title: Text Accent Hover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(136, 117, 255)
+    -
+        id: text-normal
+        title: Text Normal
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(220, 221, 222)
+    -
+        id: text-muted
+        title: Text Muted
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(153, 153, 153)
+    -
+        id: text-muted-rgb
+        title: Text Muted RGB
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(153, 153, 153)
+    -
+        id: text-faint
+        title: Text Faint
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(102, 102, 102)
+    -
+        id: text-error
+        title: Text Error
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(255, 51, 51)
+    -
+        id: text-error-hover
+        title: Text Error Hover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(153, 0, 0)
+    -
+        id: text-highlight-bg
+        title: Text Highlight BG
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgba(255, 255, 0, 0.4)
+    -
+        id: text-highlight-bg-active
+        title: Text Highlight BG Active
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(255, 128, 0, 0.4)
+    -
+        id: text-selection
+        title: Text Selection
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgba(23, 48, 77, 0.99)
+    -
+        id: text-on-accent
+        title: Text On Accent
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(220, 221, 222)
+    -
+        id: obsidian-color-properties-interactives
+        title: Interactive Properties
+        type: heading
+        level: 2
+    -
+        id: interactive-normal
+        title: Interactive Normal
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(42, 42, 42)
+    -
+        id: interactive-hover
+        title: Interactive Hover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(48, 48, 48)
+    -
+        id: interactive-accent
+        title: Interactive Accent
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(72, 54, 153)
+    -
+        id: interactive-accent-rgb
+        title: Interactive Accent RGB
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(72, 54, 153)
+    -
+        id: interactive-accent-hover
+        title: Interactive Accent Hover
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(77, 60, 166)
+    -
+        id: interactive-success
+        title: Interactive Success
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgb(25, 115, 0)
+    -
+        id: obsidian-color-properties-scrollbars
+        title: Scrollbar Properties
+        type: heading
+        level: 2
+    -
+        id: scrollbar-active-thumb-bg
+        title: Scrollbar Active Thumb BG
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgba(255, 255, 255, 0.2)
+    -
+        id: scrollbar-bg
+        title: Scrollbar BG
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgba(255, 255, 255, 0.05)
+    -
+        id: scrollbar-thumb-bg
+        title: Scrollbar Thumb BG
+        description: placeholder
+        type: variable-color
+        opacity: true
+        format: rgb
+        default: rgba(255, 255, 255, 0.1)
+*/
+body, .theme-dark, .theme-light {
+    --background-primary: rgb(32, 32, 32);
+    --background-primary-alt: rgb(26, 26, 26);
+    --background-secondary: rgb(22, 22, 22);
+    --background-secondary-alt: rgb(0, 0, 0);
+    --background-modifier-border: rgb(51, 51, 51);
+    --background-modifier-form-field: rgb(0, 0, 0, 0.3);
+    --background-modifier-form-field-highlighted: rgb(0, 0, 0, 0.22);
+    --background-modifier-box-shadow: rgb(0, 0, 0, 0.3);
+    --background-modifier-success: rgb(25, 115, 0);
+    --background-modifier-success-rgb: rgb(25, 115, 0);
+    --background-modifier-error: rgb(61, 0, 0);
+    --background-modifier-error-rgb: rgb(61, 0, 0);
+    --background-modifier-error-hover: rgb(71, 0, 0);
+    --background-modifier-cover: rgba(0, 0, 0, 0.8);
+    --text-accent: rgb(127, 109, 242);
+    --text-accent-hover: rgb(136, 117, 255);
+    --text-normal: rgb(220, 221, 222);
+    --text-muted: rgb(153, 153, 153);
+    --text-muted-rgb: rgb(153, 153, 153);
+    --text-faint: rgb(102, 102, 102);
+    --text-error: rgb(255, 51, 51);
+    --text-error-hover: rgb(153, 0, 0);
+    --text-highlight-bg: rgba(255, 255, 0, 0.4);
+    --text-highlight-bg-active: rgba(255, 128, 0, 0.4);
+    --text-selection: rgba(23, 48, 77, 0.99);
+    --text-on-accent: rgb(220, 221, 222);
+    --interactive-normal: rgb(42, 42, 42);
+    --interactive-hover: rgb(48, 48, 48);
+    --interactive-accent: rgb(72, 54, 153);
+    --interactive-accent-rgb: rgb(72, 54, 153);
+    --interactive-accent-hover: rgb(77, 60, 166);
+    --interactive-success: rgb(25, 115, 0);
+    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+}
