@@ -8,4 +8,3 @@
 - *[Adjustable Readable Line Length (ARRL-Fork)](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/ARRL-Fork)*: change the width of the content area when Readable Line Length is enabled in the Editor. Credit to [vii33](https://github.com/vii33) for the initial snippet.
 - *[Callout Typesetting](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/CalloutTypesetting)*: format your callouts in various ways, including support for various directional layouts used by non-English languages.
 - *[Other Little Things](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/OtherLittleThings)*: a catch-all for snippets and things that don't quite need their own directory.
-- *[Theme Things](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/master/ThemeThings)*: some resources for making themes in Obsidian (also helps with learning some general CSS).
