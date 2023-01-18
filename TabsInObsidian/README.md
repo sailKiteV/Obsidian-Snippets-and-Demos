@@ -41,6 +41,9 @@ Without getting too deep into the HTML explanation of what all this means, there
 
 And that's really all that we need on the HTML side. If you want a full demo to read through, check out [example.md](example.md).
 
+## Changing background color
+If you want to use a different background color than the default, change the value of `--background-active-tab` in [line 50 of the css file](https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/blob/cc88706d8e851f25660251a720668c41c1447173/TabsInObsidian/TabsInObsidian.css#L50) 
+
 ---
 ## Live Preview
 As of Obsidian v0.14.6, this snippet will not fully work in Live Preview. It will partially work in editing view, and will only work in reading view if the pane in which a given note is opened in has not yet been in editing view *at all*. This means that in order to have any reasonable functionality of the snippet in Live Preview, you must also have your default new pane view be reading mode. If this requirement is not met, then the labels rendered in reading mode will not correctly bind to their hidden radio button inputs, preventing you from changing tabs.
