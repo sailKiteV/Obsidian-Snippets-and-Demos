@@ -1,112 +1,113 @@
-/* --- Attempted Tab Implementation Through Callouts --- */
-/* initial attribute setup */
-div[data-callout="tabbed-box"],
-div[data-callout="tabs"],
-div[data-callout="tab-content"] { background: unset; border: unset; margin: unset; padding: unset; clear: both; overflow: hidden; }
+/* 
+  Meta Bind version of tabbed callouts
+  author: sailKite
+  url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/TabsInObsidian 
+  version: 0.5
+  date: 2024-04-30
+  recommended_installer: 1.5.8+
+  dependencies:
+    - https://obsidian.md/plugins?id=obsidian-meta-bind-plugin
+*/
+.mb-input-type-select.tabbed {
+    display: flex;
 
-div[data-callout="tabbed-box"].callout > .callout-title,
-div[data-callout="tabs"].callout > .callout-title,
-div[data-callout="tab-content"] > .callout-title { display: none; }
+    .mb-card:has(&) {
+        border-radius: 5px 5px 0px 0px;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+    }
+    
+    & .mb-select-input-element {
+        margin: 0px;
+        border: 0px;
+        border-radius: 0px;
+        flex: 1 0;
+        min-width: 0px;
+        word-break: break-all;
+        text-align: center;
+        border: var(--mb-border-width) solid var(--background-primary);
+        border-bottom-color: var(--background-modifier-border);
+        background-color: var(--background-primary);
 
-div[data-callout="tabbed-box"] > .callout-content,
-div[data-callout="tabs"] > .callout-content,
-div[data-callout="tab-content"] > .callout-content {
-	border: none !important;
-}
+        &.is-selected {
+            pointer-events: none;
+        }
+        &:is(.is-selected, :not(:has(> .is-selected)) > :first-child)  {
+            border-color: var(--background-modifier-border);
+            border-bottom-color: transparent;
+            background-color: var(--background-secondary);
+        }
 
-/* fix margin in Live Preview Edit Mode */
-.markdown-source-view.mod-cm6 .callout:is(div[data-callout="tabbed-box"], div[data-callout="tabs"], div[data-callout="tab-content"]) {
-  margin: 0px;
-}
+        &:first-child {
+            border-start-start-radius: 5px;
+        }
 
-/* baseline label style */
-div[data-callout="tabbed-box"] label {
-  background: var(--background-primary);
-  padding: 10px;
-  top: 10px;
-  margin-left: -1px;
-  left: 0px; 
-}
+        &:last-child {
+            border-start-end-radius: 5px;
+        }
 
-/* "default" and checked label style */
-/*[type=radio]:is(:checked, [checked]) + label*/
-[type=radio][id$="1"]:is(:checked, [checked]) ~ label:nth-of-type(1),
-[type=radio][id$="2"]:is(:checked, [checked]) ~ label:nth-of-type(2),
-[type=radio][id$="3"]:is(:checked, [checked]) ~ label:nth-of-type(3),
-[type=radio][id$="4"]:is(:checked, [checked]) ~ label:nth-of-type(4),
-[type=radio][id$="5"]:is(:checked, [checked]) ~ label:nth-of-type(5),
-[type=radio][id$="6"]:is(:checked, [checked]) ~ label:nth-of-type(6),
-label:first-of-type:not(input:is(:checked, [checked]) ~ label)  {
-  background: var(--background-active-tab);
-  z-index: 2;
-}
+        & > input[type="checkbox"] {
+            display: none;
+        }
+    }
 
-/* hide radio buttons */
-div[data-callout="tabbed-box"] > .callout-content > [type="radio"] {
-  display: none;
-}
-
-div[data-callout="tabbed-box"] > .callout-content {
-  --background-active-tab: #222229;
-  padding: 0;
-  padding-top: 5px;
-}
-
-div[data-callout="tabs"] {
-  padding-top: 5px;
-}
-
-div[data-callout="tabs"] > .callout-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 0;
+    [data-callout="infobox"] > .callout-content:has(.mb-input > * > &) {
+        border-radius: 5px;
+    }
 }
 
-/* stack content areas in grid */
-div[data-callout="tab-content"] {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row: 1;
+:root:root .callout[data-callout="tabbed-box"] {
+    --callout-content-padding: 4px;
+    margin: 0px;
+    padding: 0;
+    border-radius: 0px 0px 5px 5px;
+    background-color: transparent;
+    mix-blend-mode: normal;
+
+    & > .callout-title {
+        display: none;
+    }
+
+    & > .callout-content {
+        border: var(--background-modifier-border) solid var(--mb-border-width);
+        border-top: none;
+    }
+
+    & > .callout-content > * {
+        display: none;
+    }
 }
 
-/* hide inactive content */
-div[data-callout="tab-content"] {
-  z-index: 1;
-  display: none;
-}
 
-div[data-callout="tab-content"] > .callout-content {
-  background-color: var(--background-active-tab);
-}
+:has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(2).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(2)
+, :has(.tabbed.mb-input-type-select > :nth-child(3).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(3)
+, :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
+, :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
 
-div[data-callout="tab-content"] > .callout-content > p:nth-child(1),
-div[data-callout="tab-content"] > .callout-content > table:nth-child(1) {
-  margin-top: 10px;
-}
+, :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(2).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(2)
+, :has(.tabbed.mb-input-type-select > :nth-child(3).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(3)
+, :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
+, :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
 
-/* ultra ugly list of label-to-active-tab relations */
-input[type=radio]:last-of-type:not( input[type=radio]:checked ~ input[type=radio], :checked, [checked] ) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(1),
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="1"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(1) {
-  z-index: 2;
-  display: block;
-}
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="2"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(2) {
-  z-index: 2;
-  display: block;
-}
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="3"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(3) {
-  z-index: 2;
-  display: block;
-}
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="4"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(4) {
-  z-index: 2;
-  display: block;
-}
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="5"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(5) {
-  z-index: 2;
-  display: block;
-}
-div[data-callout="tabbed-box"] > .callout-content > [type=radio][id$="6"]:is(:checked, [checked]) ~ div[data-callout="tabs"] > .callout-content div[data-callout="tab-content"]:nth-of-type(6) {
-  z-index: 2;
-  display: block;
+, :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(2).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(2)
+, :has(.tabbed.mb-input-type-select > :nth-child(3).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(3)
+, :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
+, :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8) {
+    display: block;
 }
