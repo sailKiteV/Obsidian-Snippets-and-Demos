@@ -2,9 +2,10 @@
   Meta Bind version of tabbed callouts
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/TabsInObsidian 
-  version: 0.5
-  date: 2024-04-30
-  recommended_installer: 1.5.8+
+  version: 0.5.2
+  date: 2024-12-23
+  recommended_obsidian: 1.7.7+
+  recommended_installer: 1.6.7+
   dependencies:
     - https://obsidian.md/plugins?id=obsidian-meta-bind-plugin
 */
@@ -87,8 +88,8 @@
 , :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
 , :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
 , :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
-, :has(.tabbed.mb-input-type-select > :nth-child(7).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
-, :has(.tabbed.mb-input-type-select > :nth-child(8).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
 
 , :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
 , :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
@@ -100,14 +101,14 @@
 , :has(.tabbed.mb-input-type-select > :nth-child(7).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
 , :has(.tabbed.mb-input-type-select > :nth-child(8).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
 
-, :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
-, :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
-, :has(.tabbed.mb-input-type-select > :nth-child(2).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(2)
-, :has(.tabbed.mb-input-type-select > :nth-child(3).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(3)
-, :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
-, :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
-, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
-, :has(.tabbed.mb-input-type-select > :nth-child(7).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
-, :has(.tabbed.mb-input-type-select > :nth-child(8).is-selected) + div:not([class]) > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8) {
+, :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
+, :has(.tabbed.mb-input-type-select > :nth-child(2).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(2)
+, :has(.tabbed.mb-input-type-select > :nth-child(3).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(3)
+, :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
+, :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
+, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
+, :has(.tabbed.mb-input-type-select > :nth-child(7).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(8).is-selected) + .el-div > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8) {
     display: block;
 }
