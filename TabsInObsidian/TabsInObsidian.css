@@ -88,8 +88,8 @@
 , :has(.tabbed.mb-input-type-select > :nth-child(4).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(4)
 , :has(.tabbed.mb-input-type-select > :nth-child(5).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(5)
 , :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(6)
-, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
-, :has(.tabbed.mb-input-type-select > :nth-child(6).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
+, :has(.tabbed.mb-input-type-select > :nth-child(7).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(7)
+, :has(.tabbed.mb-input-type-select > :nth-child(8).is-selected) + .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(8)
 
 , :has(.tabbed.mb-input-type-select):not(:has(.tabbed.mb-input-type-select > .is-selected)) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
 , :has(.tabbed.mb-input-type-select > :nth-child(1).is-selected) + .cm-callout > * > .callout[data-callout="tabbed-box"] > .callout-content > :nth-child(1)
