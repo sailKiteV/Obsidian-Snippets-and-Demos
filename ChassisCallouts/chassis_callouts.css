@@ -2,8 +2,8 @@
   Chassis Callouts to use as platforms for other styling
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/ChassisCallouts
-  version: 1.0
-  date: 2024-04-30
+  version: 1.1
+  date: 2025-02-09
   recommended_installer: 1.5.8+
 */
 /* basic div-like callout as a platform for other styling: [!div] */
@@ -29,7 +29,7 @@
 }
 
 /* grid-ify any callout, add new ratios as needed: [!example|grid] */
-.callout[data-callout-metadata*="grid"] {
+.callout:is([data-callout-metadata*="grid"], [data-callout-metadata*="grid"]) {
     --col-gap: 8px;
 
     & > .callout-content {
