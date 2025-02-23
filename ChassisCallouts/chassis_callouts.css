@@ -2,12 +2,15 @@
   Chassis Callouts to use as platforms for other styling
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/ChassisCallouts
-  version: 1.1
-  date: 2025-02-09
+  version: 1.2
+  date: 2025-02-23
   recommended_installer: 1.5.8+
 */
 /* basic div-like callout as a platform for other styling: [!div] */
-.callout:is([data-callout="div"], [data-callout="div-m"]) {
+.callout:is(
+    [data-callout="div"], [data-callout="div-m"],
+    [data-callout-metadata~="div"], [data-callout-metadata~="div-m"]
+) {
     margin: unset;
     border: unset;
     border-radius: unset;
@@ -18,8 +21,8 @@
     & > .callout-title { display: none; }
 }
 
-/* [!div-m] has extra margin control */
-.callout[data-callout="div-m"] {
+/* [!div-m] and [!example|div-m] has extra margin control */
+.callout:is([data-callout="div-m"], [data-callout-metadata~="div-m"]) {
     margin-block: 1em;
 
     & > .callout-content {
@@ -46,10 +49,11 @@
         & > .callout.is-collapsed { height: fit-content; }
     }
 
+    &[data-callout-metadata*="grid-m"] {
+        margin-block: var(--col-gap);
+    }
+
     &[data-callout-metadata*="grid-m"] > .callout-content > * {
         margin-block: 0 !important;
     }
-}
-.callout[data-callout="div-m"][data-callout-metadata*="grid-m"] {
-    margin-block: var(--col-gap);
 }
