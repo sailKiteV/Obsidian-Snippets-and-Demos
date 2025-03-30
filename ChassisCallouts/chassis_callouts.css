@@ -2,8 +2,8 @@
   Chassis Callouts to use as platforms for other styling
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/ChassisCallouts
-  version: 1.2
-  date: 2025-02-23
+  version: 1.2.1
+  date: 2025-03-30
   recommended_installer: 1.5.8+
 */
 /* basic div-like callout as a platform for other styling: [!div] */
@@ -45,6 +45,11 @@
         & > [data-callout-metadata*="span-2"] { grid-column-end: span 2; }
         & > [data-callout-metadata*="span-3"] { grid-column-end: span 3; }
         & > [data-callout-metadata*="span-4"] { grid-column-end: span 4; }
+        & > [data-callout-metadata*="span-5"] { grid-column-end: span 5; }
+        & > [data-callout-metadata*="span-6"] { grid-column-end: span 6; }
+        & > [data-callout-metadata*="span-7"] { grid-column-end: span 7; }
+        & > [data-callout-metadata*="span-8"] { grid-column-end: span 8; }
+        & > [data-callout-metadata*="span-9"] { grid-column-end: span 9; }
 
         & > .callout.is-collapsed { height: fit-content; }
     }
