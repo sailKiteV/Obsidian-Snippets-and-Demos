@@ -1,27 +1,33 @@
-/* aside functionality as a custom callout */
-.callout[data-callout-metadata*="aside"] {
+/* aside functionality as a custom callout
+   use "askide" instead of "aside" due to compatiblity, e.g.
+   
+   > [!example|askide-r] something
+   > 
+   > some content
+ */
+.callout[data-callout-metadata~="askide"] {
     /* change these values as desired */
-    --aside-width: 200px;
-    --aside-offset: var(--size-4-4);
+    --askide-width: 200px;
+    --askide-offset: var(--size-4-4);
 
     /* leave anything that is here alone */
     position: absolute;
 }
-:is(.markdown-source-view .cm-callout, .el-div):has(> .callout[data-callout-metadata*="aside"]) {
+:is(.markdown-source-view .cm-callout, .el-div):has(> .callout[data-callout-metadata*="askide"]) {
     position: relative;
     overflow: visible;
     contain: none !important;
 }
-.callout[data-callout-metadata*="aside-l"] {
-    left: calc( -1 * (var(--aside-width) + var(--aside-offset)));
-    right: calc( 100% + var(--aside-offset));
+.callout[data-callout-metadata*="askide-l"] {
+    left: calc( -1 * (var(--askide-width) + var(--askide-offset)));
+    right: calc( 100% + var(--askide-offset));
 }
-.callout[data-callout-metadata*="aside-r"] {
-    left: calc( 100% + var(--aside-offset));
-    right: calc( -1 * (var(--aside-width) + var(--aside-offset)));
+.callout[data-callout-metadata*="askide-r"] {
+    left: calc( 100% + var(--askide-offset));
+    right: calc( -1 * (var(--askide-width) + var(--askide-offset)));
 }
 @media (hover: hover) {
-    .markdown-source-view.mod-cm6 .cm-embed-block:has(> div > [data-callout-metadata*="aside"]):hover {
+    .markdown-source-view.mod-cm6 .cm-embed-block:has(> div > [data-callout-metadata*="askide"]):hover {
         overflow: visible;
     }
 }
@@ -36,6 +42,6 @@ body {
 .cm-callout:has(> div > .callout[data-callout-metadata*="editor-wrap-l"]) {
     float: left;
 }
-.markdown-source-view.mod-cm6 .cm-content .cm-callout:has(> div > .callout[data-callout-metadata*="aside"]) {
+.markdown-source-view.mod-cm6 .cm-content .cm-callout:has(> div > .callout[data-callout-metadata*="askide"]) {
     contain: none !important;
 }
