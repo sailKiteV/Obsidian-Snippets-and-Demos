@@ -5,7 +5,7 @@
    > 
    > some content
  */
-.callout[data-callout-metadata~="askide"] {
+.callout[data-callout-metadata*="askide"] {
     /* change these values as desired */
     --askide-width: 200px;
     --askide-offset: var(--size-4-4);
