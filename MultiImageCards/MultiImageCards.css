@@ -1,0 +1,81 @@
+/* 
+  snippet_description: |-
+    A quick-and-dirty snippet for Obsidian's Cards View in the Bases feature
+    that allows for multiple images to cycle in sequence when hovered, and
+    maintains the visibility of whichever one is active in the cycle on
+    mouse-out.
+  author: sailKite
+  url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/MultiImageCards
+  version: 0.1.1
+  date: 2025-09-18
+  recommended_obsidian: 1.9.10+
+  recommended_installer: 1.9.10+
+  dependencies:
+*/
+
+body {
+    --card-time-per-image: 2s; /* change to however long you want */
+}
+
+
+.bases-cards-cover {
+    anchor-name: --card;
+}
+
+.bases-cards-property[data-property="formula.images"] {
+    position: static;
+    height: 0px !important;
+
+    & .value-list-element {
+        --clock: -1;
+        --total-images: round(up, calc(0.5 * sibling-count()));
+        --image-index: round(down, calc(0.5 * sibling-index()));
+
+        position: absolute;
+        position-anchor: --card;
+        inset: 0;
+        display: block;
+        width: anchor-size(100%);
+        height: anchor-size(100%);
+        opacity: round(up, var(--clock));
+        animation: calc(var(--card-time-per-image) * var(--total-images)) linear calc(var(--card-time-per-image) * var(--image-index)) infinite normal paused forwards card-images;
+
+        &:first-child {
+            animation-fill-mode: both;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: unset;
+        }
+    }
+
+    &:hover .value-list-element {
+        animation-play-state: running;
+    }
+
+    & > .bases-cards-label {
+        display: none;
+    }
+
+    & > .bases-cards-line {
+        position: static;
+    }
+}
+
+@property --clock {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: -1;
+}
+
+@keyframes card-images {
+    from {
+        --clock: 1;
+    }
+    to {
+        --clock: calc(-1 * var(--total-images) + 1);
+    }
+}
