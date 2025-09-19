@@ -1,5 +1,7 @@
 # Multi Image Cards
 
+![](MultiImageCardsDemo.gif)
+
 This is a small snippet for the Cards View feature Obsidian's new Bases feature. For a quick overview of how the core feature works, please take a gander at the Obsidian helpsite's documentation for [syntax](<https://help.obsidian.md/bases/syntax>), [functions](<https://help.obsidian.md/bases/functions>), and [views](<https://help.obsidian.md/bases/views>) respectively. This document assumes that you have read those, and have a cursory understanding of them.  
 
 First things first, download the snippet [here](MultiImageCards.css). If you need help with that, the Obsidian helpsite once again has a nice page on [CSS snippets](<https://help.obsidian.md/snippets>).  
