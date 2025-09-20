@@ -6,7 +6,7 @@
     mouse-out.
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/MultiImageCards
-  version: 0.1.1
+  version: 0.1.2
   date: 2025-09-18
   recommended_obsidian: 1.9.10+
   recommended_installer: 1.9.10+
@@ -17,7 +17,6 @@ body {
     --card-time-per-image: 2s; /* change to however long you want */
 }
 
-
 .bases-cards-cover {
     anchor-name: --card;
 }
@@ -25,6 +24,9 @@ body {
 .bases-cards-property[data-property="formula.images"] {
     position: static;
     height: 0px !important;
+
+    .bases-cards-cover[style*="cover;"] ~ & {--image-fit: cover;}
+    .bases-cards-cover[style*="contain;"] ~ & {--image-fit: contain;}
 
     & .value-list-element {
         --clock: -1;
@@ -47,7 +49,7 @@ body {
         & img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: var(--image-fit, cover);
             border-radius: unset;
         }
     }
