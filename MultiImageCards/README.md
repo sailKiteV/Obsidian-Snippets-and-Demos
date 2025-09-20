@@ -21,7 +21,7 @@ views:
     image: '#000'
 ```
 
-In the context of the snippet, the thing that matters most is that there is, somewhere within its list of displayed properties, `formula.images`. By default, this is what the snippet uses to attempt to identify the necessary things to pull when emulating the appearance of multiple images on the card. If you are comfortable with CSS, you can change that value to something different (both in the snippet and in any Base Views that use it, as long as you remember whatever it is that you want to call the formula property.  
+In the context of the snippet, the thing that matters most is that there is, somewhere within its list of displayed properties, `formula.images`. i also recommend, for many reasons, putting that as the last thing in your View's displayed property order. By default, this is what the snippet uses to attempt to identify the necessary things to pull when emulating the appearance of multiple images on the card. If you are comfortable with CSS, you can change that value to something different (both in the snippet and in any Base Views that use it, as long as you remember whatever it is that you want to call the formula property.  
 
 To provide the list of images that we want the snippet to use from each card, all we do is create a formula, give it the name `images` (or whatever you prefer as explained above), and then define or calculate something that will return a list of images. The list should be a flat list and it should only contain images, such as with the [image()](<https://help.obsidian.md/bases/functions#%60image()%60>) function. For example, you might have some property (let's call it `yourProp`) with a list of links in it. That might look something like this:
 
