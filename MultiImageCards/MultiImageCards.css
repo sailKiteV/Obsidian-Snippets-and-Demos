@@ -83,10 +83,6 @@ body {
     .bases-cards-item:has(&:nth-child(3)) {--card-rows: 3;}
     .bases-cards-item:has(&:nth-child(4)) {--card-rows: 4;}
     .bases-cards-item:has(&:nth-child(5)) {--card-rows: 5;}
-    .bases-cards-item:has(&:nth-child(6)) {--card-rows: 6;}
-    .bases-cards-item:has(&:nth-child(7)) {--card-rows: 7;}
-    .bases-cards-item:has(&:nth-child(8)) {--card-rows: 8;}
-    .bases-cards-item:has(&:nth-child(9)) {--card-rows: 9;}
 }
 
 @property --clock {
