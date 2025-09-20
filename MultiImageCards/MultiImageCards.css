@@ -14,15 +14,15 @@
 */
 
 body {
-    --card-time-per-image: 2s;
+    --card-time-per-image: 2s; /* change to however long you want */
 }
+
 
 .bases-cards-cover {
     anchor-name: --card;
 }
 
 .bases-cards-property[data-property="formula.images"] {
-    --bases-cards-line-height: 0px;
     position: static;
     height: 0px !important;
 
@@ -63,26 +63,6 @@ body {
     & > .bases-cards-line {
         position: static;
     }
-
-    /* disgusting attempt at sizing */
-    .bases-cards-item:has(&) {
-        --cards-file-title-height: 0px;
-        height: calc(
-            220.667px                                                                         /* card image height */
-            + var(--cards-file-title-height)                                                  /* file label        */
-            + (var(--card-rows) - 3) * (var(--bases-cards-line-height) + 2 * var(--size-4-2)) /* label and values  */
-            + (var(--card-rows) - 3) * var(--size-4-2)                                        /* gaps              */
-            + var(--size-2-1))                                                                /* block end padding */
-            !important;                                                                       /* very important    */
-
-        &:has(.mod-title) {
-            --cards-file-title-height: (var(--bases-cards-line-height) + 2 * var(--size-4-2));
-        }
-    }
-    .bases-cards-item:has(&:nth-child(2)) {--card-rows: 2;}
-    .bases-cards-item:has(&:nth-child(3)) {--card-rows: 3;}
-    .bases-cards-item:has(&:nth-child(4)) {--card-rows: 4;}
-    .bases-cards-item:has(&:nth-child(5)) {--card-rows: 5;}
 }
 
 @property --clock {
