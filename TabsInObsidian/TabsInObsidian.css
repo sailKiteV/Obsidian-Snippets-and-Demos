@@ -2,7 +2,7 @@
   Meta Bind version of tabbed callouts
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/TabsInObsidian 
-  version: 0.5.3
+  version: 0.5.4
   date: 2026-01-18
   recommended_obsidian: 1.7.7+
   recommended_installer: 1.6.7+
@@ -15,7 +15,8 @@ body {
 }
 
 .mb-input-type-select.tabbed {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
 
     .mb-card:has(&) {
         border-radius: 5px 5px 0px 0px;
@@ -28,7 +29,6 @@ body {
         margin: 0px;
         border: 0px;
         border-radius: 0px;
-        flex: 1 0;
         min-width: 0px;
         word-break: break-all;
         text-align: center;
