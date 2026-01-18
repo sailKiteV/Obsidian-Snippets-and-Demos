@@ -2,13 +2,18 @@
   Meta Bind version of tabbed callouts
   author: sailKite
   url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/TabsInObsidian 
-  version: 0.5.2
-  date: 2024-12-23
+  version: 0.5.3
+  date: 2025-01-18
   recommended_obsidian: 1.7.7+
   recommended_installer: 1.6.7+
   dependencies:
     - https://obsidian.md/plugins?id=obsidian-meta-bind-plugin
 */
+body {
+    --sK-tabs-border-color: var(--background-modifier-border);
+    --sK-tabs-border-width: var(--mb-border-width, 1px);
+}
+
 .mb-input-type-select.tabbed {
     display: flex;
 
@@ -27,15 +32,15 @@
         min-width: 0px;
         word-break: break-all;
         text-align: center;
-        border: var(--mb-border-width) solid var(--background-primary);
-        border-bottom-color: var(--background-modifier-border);
+        border: var(--sK-tabs-border-width) solid var(--background-primary);
+        border-bottom-color: var(--sK-tabs-border-color);
         background-color: var(--background-primary);
 
         &.is-selected {
             pointer-events: none;
         }
         &:is(.is-selected, :not(:has(> .is-selected)) > :first-child)  {
-            border-color: var(--background-modifier-border);
+            border-color: var(--sK-tabs-border-color);
             border-bottom-color: transparent;
             background-color: var(--background-secondary);
         }
@@ -71,8 +76,9 @@
     }
 
     & > .callout-content {
-        border: var(--background-modifier-border) solid var(--mb-border-width);
+        border: var(--sK-tabs-border-color) solid var(--sK-tabs-border-width);
         border-top: none;
+        border-radius: inherit;
     }
 
     & > .callout-content > * {
