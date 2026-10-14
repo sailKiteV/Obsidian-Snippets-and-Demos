@@ -1,0 +1,106 @@
+/* 
+  elevator_pitch: CSS-only tabs, very rough version
+  author: sailKite
+  url: https://github.com/sailKiteV/Obsidian-Snippets-and-Demos/tree/main/TabsInObsidian 
+  version: 0.1
+  date: 2026-10-13
+  recommended_obsidian: 1.13+
+  recommended_installer: 1.13+
+  dependencies:
+    - anything Chrome 138+
+*/
+.callout[data-callout="puretabs"] {
+    --tab-radius: 4px;
+    position: relative;
+    padding: 0;
+    border-radius: var(--tab-radius);
+    background-color: #0000;
+    mix-blend-mode: normal;
+
+    & > .callout-title {
+        line-height: var(--line-height-normal);
+        padding-block: var(--size-4-1);
+        border-block: 1px solid #0000;
+        visibility: hidden;
+    }
+
+    & > .callout-content {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        scroll-behavior: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        scroll-marker-group: before;
+        border: 1px solid var(--background-modifier-border);
+        border-top: none;
+        border-bottom-left-radius: var(--tab-radius);
+        border-bottom-right-radius: var(--tab-radius);
+
+        & > .callout[data-callout="ptab"] {
+            display: block;
+            padding: 12px;
+            margin: 0px;
+            break-after: column;
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+            background-color: #0000;
+            mix-blend-mode: normal;
+
+            & > .callout-title {
+                display: none;
+            }
+
+            & > .callout-content {
+                background-color: #0000;
+
+                & > :first-child { margin-top:    0px !important; }
+                & > :last-child  { margin-bottom: 0px !important; }
+            }
+
+            &::scroll-marker {
+                content: attr(data-callout-metadata, "=");
+                display: block;
+                background-color: var(--background-secondary);
+                padding: var(--size-4-1) var(--size-4-2);
+                border: 1px solid var(--background-modifier-border);
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:first-child::scroll-marker {
+                border-top-left-radius: var(--tab-radius);
+            }
+
+            &:last-child::scroll-marker {
+                border-top-right-radius: var(--tab-radius);
+            }
+
+            &:nth-child(n + 2)::scroll-marker {
+                border-left-width: 0px;
+            }
+
+            &::scroll-marker:target-current {
+                background-color: var(--background-primary);
+                border-bottom-color: transparent;
+            }
+
+            &::scroll-marker:hover {
+                border-top-color: var(--color-accent);
+            }
+        }
+
+        &::scroll-marker-group {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-auto-flow: column;
+            gap: 0px;
+            border-radius: var(--tab-radius) var(--tab-radius) 0px 0px;
+            overflow: hidden;
+            z-index: 10;
+        }
+    }
+}
